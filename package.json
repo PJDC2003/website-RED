@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jquery": "^3.7.0"
+  },
+  "name": "website-red",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PJDC2003/Website-RED.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PJDC2003/Website-RED/issues"
+  },
+  "homepage": "https://github.com/PJDC2003/Website-RED#readme",
+  "description": ""
+}
