@@ -1,6 +1,8 @@
 const express = require('express');
+const i18n = require('i18n');
 const app = express();
 const path = require('path');
+const PORT = process.env.PORT || 7000;
 
 // Configurar o mecanismo de renderização EJS
 app.set('view engine', 'ejs');
@@ -9,16 +11,52 @@ app.set('views', path.join(__dirname, 'views'));
 // Configurar a pasta pública para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configuração do módulo i18n
+i18n.configure({
+  locales: ['en', 'pt'], // Idiomas suportados
+  defaultLocale: 'pt', // Idioma padrão (português)
+  directory: __dirname + '/locales', // Diretório onde estão os arquivos de tradução (não usado neste caso)
+  register: global, // Permite acessar as traduções como globais, como: __('Empresas Patrocinadoras')
+  queryParameter: 'lang', // Define o nome do parâmetro de consulta para selecionar o idioma (por padrão, 'lang')
+  customHeaders: (req, res) => {
+    // Define um cabeçalho personalizado para indicar o idioma selecionado
+    return req.query.lang;
+  },
+  logWarnFn: () => {}, // Desabilita os logs de aviso (opcional)
+  objectNotation: false, // Altera para false para usar o formato de tradução simples (não aninhado)
+});
+
+// Middleware para configurar o idioma com base no cabeçalho personalizado definido no i18n
+app.use(i18n.init);
+
+
+// Middleware personalizado para adicionar a função '__()' ao res.locals
+app.use((req, res, next) => {
+  res.locals.__ = res.__;
+  next();
+});
+
+// Middleware para definir o idioma padrão caso não seja passado na URL
+app.use((req, res, next) => {
+  if (!req.query.lang) {
+    req.query.lang = 'pt'; // Defina 'pt' como o idioma padrão caso não seja passado
+  }
+  next();
+});
+
+
 // Rota para a página inicial
 app.get('/', (req, res) => {
   res.render('homepage');
 });
 
 // Iniciar o servidor
-const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
   console.log(`Servidor na porta ${PORT}`);
 });
+
+
+
 
 
 /* ETAPAS PARA INICIAR O SERVIDOR
