@@ -11,7 +11,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Configurar a pasta pública para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configuração do módulo i18n
+// Configuração do módulo i18n 
 i18n.configure({
   locales: ['en', 'pt'], // Idiomas suportados
   defaultLocale: 'pt', // Idioma padrão (português)
@@ -49,6 +49,12 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.render('homepage');
 });
+
+// Rota para a página team.ejs
+app.get('/team', (req, res) => {
+  res.render('team');
+});
+
 
 // Iniciar o servidor
 app.listen(PORT, () => {
