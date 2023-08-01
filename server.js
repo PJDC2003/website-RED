@@ -11,11 +11,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rota para a página inicial
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('homepage');
 });
 
 // Iniciar o servidor
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
   console.log(`Servidor na porta ${PORT}`);
 });
@@ -24,5 +24,5 @@ app.listen(PORT, () => {
 /* ETAPAS PARA INICIAR O SERVIDOR
 1. New Terminal (Ctrl + Shift + ç)
 2. node server.js
-3. Abrir browser (Chrome, por exemplo) e escrever http://localhost:3000/
+3. Abrir browser (Chrome, por exemplo) e escrever http://localhost:4000/
 */

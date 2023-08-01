@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<html>
+<%- include('./header') %>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RED</title>
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="js/script.js"></script>
-    
-    <!-- FUNCTION TO IMPORT THE CODE OF A HTML FILE  -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script>
-        $(function() {
-          $("#navbar").load("navbar.html");
-        });
-        $(function() {
-          $("#footer").load("footer.html");
-        });
-    </script>
-  </head>
-
-
-  <body>
-    <div id="navbar"></div>  
+<body> 
+    <%- include('./navbar') %>
     <div class="landing" id="landing">
       <div class="about-me">
         <h1>Hi, I am Tom 👋</h1>
@@ -143,6 +120,5 @@
         </p>
       </div>
     </div>
-    <div id="footer"></div>
-  </body>
-</html>
+    <%- include('./footer') %>
+</body>
