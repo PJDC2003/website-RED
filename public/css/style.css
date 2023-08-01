@@ -59,16 +59,18 @@ footer {
   background-color: rgba(25, 24, 24, 0.5);
   color: var(--secondary-color);
 }
+
 .logo img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+  height: 7%;
+  width: 7%;
+  border-radius: 25%;
   cursor: pointer;
 }
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   transition: 500ms ease-in-out;
 }
+
 .landing {
   height: 100vh;
   display: flex;
