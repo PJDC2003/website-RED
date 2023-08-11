@@ -1,11 +1,11 @@
-<nav>
+<!-- <nav>
     <div class="logo">
         <img src="img/logos/RED_semibranco.png" alt="" />
     </div>
     <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/team">Equipa</a></li>
-        <li><a href="#projects">Patrocínios</a></li>
+        <li><a href="/">Patrocínios</a></li>
         <li class="language-switcher">
             <a href="#" class="dropbtn">Language</a>
             <div class="dropdown-content">
@@ -14,4 +14,32 @@
             </div>
         </li>
     </ul>
+</nav> -->
+
+
+<nav class="top-0 z-50 w-screen mt-0 text-xs text-white" style="position: fixed">
+    
+    <div class="relative flex px-3 sm:px-6 py-2 h-16 w-full reveal_navbar">
+
+        <!-- AEROTEC + RED -->
+        <div class="static z-50 flex items-center lg:mx-6 h-8 my-2">
+            <a target="_blank" href="https://aerotec.pt" class="drop-shadow-xl">
+                <img src="/img/logos/institucional/AEROTEC_short.png" alt="Aerotec" class="max-h-8" />
+            </a>
+            <div class="w-0 h-8 border border-gray-500 mr-0 ml-2 sm:mr-2 sm:ml-4"></div>
+            <a href="" class="drop-shadow-xl">
+                <img src="/img/Logos/RED/RED_semibranco.png" alt="RED" class="max-h-9" />
+            </a>
+        </div>
+        
+        <!-- MENU (medio ou menor) -->
+        <div class="static z-50 ml-auto sm:mr-2 mr-0 h-12">
+            <button type="button" class="flex items-center h-12 pr-3 pl-2 tracking-wide text-white uppercase border rounded-md lg:hidden toggle-nav">
+                <i class="ml-1 fa fa-bars"></i>
+            </button>
+        </div>
+
+        
+    </div>
+
 </nav>

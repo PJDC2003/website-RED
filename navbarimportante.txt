@@ -1,3 +1,0 @@
-https://codyhouse.co/blog/post/accessible-language-picker
-https://codyhouse.co/ds/components/app/language-picker--hide-label
-https://pinegrow.com/tutorials/how-to-create-a-language-dropdown-with-flags-in-bootstrap-4/

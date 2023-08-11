@@ -1,2 +1,3 @@
 - New Terminal (Ctrl + Shift + ç)
 - New Terminal (Ctrl + Shift + ç)
+- Add line(s) comment (Ctrl + k, Ctrl + c)

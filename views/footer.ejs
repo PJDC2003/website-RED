@@ -1,29 +1,59 @@
-<html>
-  <footer>
-    <div class="icons">
-      <a href=https://github.com/Xokhezi>
-          <i id="gitHubIcon" class="fab fa-github" style="color: black"></i>
-          </a>
-      <a href="https://instagram.com/tom.is.coding?igshid=NTc4MTIwNjQ2YQ==">
-          <i
-          id="instagramIcon"
-          class="fab fa-instagram"
-          style="color: #c13584"
-          ></i>
-      </a>        
-      <a href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-n%C4%9Bmec-2501ab1b7/">
-          <i
-          id="linkedinIcon"
-          class="fab fa-linkedin"
-          style="color: #0077b5"
-          ></i>
-      </a>
-    </div>
+<footer class="relative z-20 bg-grey-footer">
+    
+  <!-- CONTACTOS -->
+  <div class="md:w-3/5 mx-auto py-5 text-center text-white sm:mx-auto">
+      <div class="pt-10 text-xl leading-tight lg:text-2xl font-semibold"><%= __('Contactos') %></div>
+      <div class="my-2 text-footer"><%= __('Podes entrar em contacto connosco através de:') %>
+          <div class="mx-auto w-64 mt-6 text-footer grid grid-cols-5 justify-items-center sm:gap-x-10">
+              <!-- FACEBOOK -->
+              <a href="https://www.facebook.com/AeroTecnico/?ref=br_rs"
+                  class="block h-full py-0 transition-colors duration-300">
+                  <i class="mx-auto fab fa-facebook fa-2x sr-contact footer-sgv"></i>
+              </a>
+              <!-- INSTAGRAM -->
+              <a  href="https://www.instagram.com/aerotec.red/"
+                  class="block h-full py-0 transition-colors duration-300">
+                  <i class="mx-auto fab fa-instagram fa-2x sr-contact footer-sgv"></i>
+              </a>
+              <!-- MAIL -->
+              <a  href="mailto:red@aerotec.tecnico.ulisboa.pt"
+                  class="block h-full py-0 transition-colors duration-300">
+                  <i class="mx-auto fas fa-envelope fa-2x sr-contact footer-sgv"></i>
+              </a>
+              <!-- LINKEDIN -->
+              <a  href="https://pt.linkedin.com/company/rocket-experiment-divisionn"
+                  class="block h-full py-0 transition-colors duration-300">
+                  <i class="mx-auto fab fa-linkedin fa-2x sr-contact footer-sgv"></i>
+              </a>
+              <!-- YOUTUBE -->
+              <a  href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw"
+                  class="block h-full py-0 transition-colors duration-300">
+                  <i class="mx-auto fab fa-youtube fa-2x sr-contact footer-sgv"></i>
+              </a>
+          </div>
+      </div>
+  </div>
 
-    <p><i
-      id="instagramIcon"
-      class="fab fa-instagram"
-      style="color: #c13584"
-      ></i> @RED</p>
-  </footer>  
-</html>
+  <!-- LOGOS DO AEROTEC -->
+  <div class="w-full mx-auto py-10 text-center lg:w-3/5 flex">
+          <!-- IST -->
+          <div class="h-auto w-1/3 place-self-center">
+              <a href="https://tecnico.ulisboa.pt/pt/" target="blank">
+                  <img src="/img/Logos/Institucional/IST_full_white.png" alt="Instituto Superior Técnico" class="lg:mx-auto clicable" />
+              </a>
+          </div>
+          <!-- AEROTEC -->
+          <div class="h-auto w-1/3 place-self-center">
+              <a href="https://aerotec.pt/" target="blank">
+                  <img src="/img/logos/institucional/AEROTEC_full_white.png" alt="AeroTéc" class="lg:mx-auto clicable" />
+              </a>
+          </div>
+          <!-- EUROAVIA -->
+          <div class="h-auto w-1/3 place-self-center">
+              <a href="https://euroavia.eu/" target="blank">
+                  <img src="/img/logos/institucional/EURAVIA_mid_white.png" alt="Euroavia" class="lg:mx-auto clicable" />
+              </a>
+          </div>   
+  </div>
+</footer>
+
