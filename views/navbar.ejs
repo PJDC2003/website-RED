@@ -1,6 +1,6 @@
 <nav class="top-0 left-0 z-50 w-screen fixed flex justify-between bg-nav-color h-20 items-center mt-0 text-xs text-white">
-    
-    <div class="relative flex px-3 sm:px-6 py-2 h-16 w-full reveal_navbar">
+
+    <div class="relative flex px-3 sm:px-6 h-20 w-full justify-between items-center reveal_navbar">
 
         <!-- AEROTEC + RED -->
         <div class="static z-50 flex items-center lg:mx-6 h-8 my-2">
@@ -13,14 +13,52 @@
             </a>
         </div>
         
-        <!-- MENU (medio ou menor) -->
-        <div class="static z-50 ml-auto sm:mr-2 mr-0 h-12">
-            <button type="button" class="flex items-center h-12 pr-3 pl-2 tracking-wide text-white uppercase border rounded-md lg:hidden toggle-nav">
+        <!-- MENU (médio ou menor) -->
+        <div class="static z-50 ml-auto sm:mr-2 mr-0 h-20">
+            <button type="button" class="flex items-center h-20 pr-3 pl-2 tracking-wide text-white uppercase border rounded-md lg:hidden toggle-nav">
                 <i class="ml-1 fa fa-bars"></i>
             </button>
         </div>
 
-        
+        <!-- DADOS PARA O MENU/BARRA -->
+        <div class="absolute top-14 left-0 w-full pt-0 font-bold tracking-wider text-center uppercase transition-all duration-300 shadow-lg -mt-14 h-20 lg:transition-none lg:w-auto lg:top-0 lg:flex lg:text-left lg:shadow-none lg:opacity-100 lg:relative lg:mt-auto lg:pt-0 xl:border-t-0 reveal_navbar backdrop-blur-2xl lg:backdrop-blur-none" id="nav">
+            <div class="h-16 border-b border-white mx-3 sm:ml-0 sm:mr-12 lg:hidden"></div>
+            <a href="/" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-20 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600">HOME</a>
+            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-20 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600">EQUIPA</a>
+            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-20 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600">EQUIPAS</a>
+            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-20 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600">PATROCÍNIOS</a>
+            <a href="#footer" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-20 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600">CONTACTOS</a>
+            
+            <!-- COMUNICAÇÃO -->
+            <div class="flex flex-cols justify-between items-center ml-4 lg:ml-0">
+                <!-- SEPARADOR -->
+                <div class="w-0 h-10 lg:hidden border-grey-500 mx-0 lg:mx-2"></div>
+                <!-- SEPARADOR -->
+                <div class="w-0 h-10 border border-grey-500 ml-2 mr-0"></div>
+                <!-- LINGUAGEM -->
+                <div class="static z-50 flex items-center ml-0">
+                    <% if (lang === 'pt') { %>
+                        <a href="?lang=en" class="flex flex-row items-center">
+                            <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto text-red-600"> EN </div>
+                            <img src="/img/Logos/idioma/PT_blue.png" class="w-8"></img>
+                            <div class="relative flex flex-row hover:opacity-0 duration-300 items-center -ml-20 w-28"> 
+                                <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto "> EN </div>
+                                <img src="/img/Logos/idioma/PT_white.png" class="w-8 my-2"></img> 
+                            </div>
+                        </a>
+                    <% } else { %>
+                        <a href="?lang=pt" class="flex flex-row items-center">
+                            <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto text-red-600"> PT </div>
+                            <img src="/img/logos/idioma/UK_blue.png" class="w-8"></img>
+                            <div class="relative flex flex-row hover:opacity-0 duration-300 items-center -ml-20 w-28">
+                                <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto"> PT </div>
+                                <img src="/img/logos/idioma/UK_white.png" class="w-8"></img> 
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div> 
     </div>
 
 </nav>

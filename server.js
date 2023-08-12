@@ -36,12 +36,21 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware para definir o idioma padrão caso não seja passado na URL
 app.use((req, res, next) => {
-  if (!req.query.lang) {
-    req.query.lang = 'pt'; // Defina 'pt' como o idioma padrão caso não seja passado
-  }
+  res.locals.i18n = i18n;
+  res.locals.lang = req.query.lang || 'pt'; // Defina 'pt' como o idioma padrão caso não seja passado
   next();
+});
+
+
+// Torna o i18n disponível globalmente nos templates
+app.use((req, res, next) => {
+  res.locals.i18n = i18n; 
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.render('homepage', { i18n, lang: req.query.lang });
 });
 
 
