@@ -15,6 +15,7 @@ module.exports = {
       },
       extend: {
           colors: {
+              'nav-color': 'rgba(25, 24, 24, 0.5)',  
               'primary-light': '#00c3e9',
               'primary-dark': '#016aaf',
               'secondary': '#1a1f65',

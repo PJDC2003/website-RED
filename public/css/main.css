@@ -2,11 +2,38 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* principal */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #d8e2dc;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+.clicable {   /*animação nas imagens e icons*/
+  @apply hover:scale-102 duration-200 transform cursor-pointer; 
+}
+
+/* principal */
 
 
 
 
-/*footer */
+
+/* navbar */
+
+
+
+
+
+
+/* navbar */
+
+
+
+/* footer */
 .text-footer {
   font-family: 'Source Sans Pro', sans-serif;
   color: #A7A7A7;
@@ -24,12 +51,7 @@
   transition-duration: 300ms;
   color: #D3D3D3;
 }
-/*footer */
-
-
-.clicable {
-  @apply hover:scale-102 duration-200 transform cursor-pointer;
-}
+/* footer */
 
 
 
@@ -43,13 +65,7 @@
 
 
 
-:root {
-  --primary-color: #000000;
-  --secondary-color: #d8e2dc;
-}
-html {
-  scroll-behavior:smooth;
-}
+
 
 body {
   margin: 0;
@@ -59,19 +75,7 @@ body {
   color: var(--secondary-color);
   font-size: 1.25rem;
 }
-nav {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 30px;
-  background-color: rgba(25, 24, 24, 0.5);
-  color: var(--secondary-color);
-}
+
 nav ul {
   display: flex;
   height: 100%;
