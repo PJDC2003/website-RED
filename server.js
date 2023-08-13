@@ -18,10 +18,8 @@ i18n.configure({
   directory: __dirname + '/locales', // Diretório onde estão os arquivos de tradução (não usado neste caso)
   register: global, // Permite acessar as traduções como globais, como: __('Empresas Patrocinadoras')
   queryParameter: 'lang', // Define o nome do parâmetro de consulta para selecionar o idioma (por padrão, 'lang')
-  customHeaders: (req, res) => {
-    // Define um cabeçalho personalizado para indicar o idioma selecionado
-    return req.query.lang;
-  },
+  customHeaders: (req, res) => {   // Define um cabeçalho personalizado para indicar o idioma selecionado
+    return req.query.lang; },
   logWarnFn: () => {}, // Desabilita os logs de aviso (opcional)
   objectNotation: false, // Altera para false para usar o formato de tradução simples (não aninhado)
 });
@@ -29,19 +27,18 @@ i18n.configure({
 // Middleware para configurar o idioma com base no cabeçalho personalizado definido no i18n
 app.use(i18n.init);
 
-
 // Middleware personalizado para adicionar a função '__()' ao res.locals
 app.use((req, res, next) => {
   res.locals.__ = res.__;
   next();
 });
 
+// Defina 'pt' como o idioma padrão caso não seja passado
 app.use((req, res, next) => {
   res.locals.i18n = i18n;
-  res.locals.lang = req.query.lang || 'pt'; // Defina 'pt' como o idioma padrão caso não seja passado
+  res.locals.lang = req.query.lang || 'pt';
   next();
 });
-
 
 // Torna o i18n disponível globalmente nos templates
 app.use((req, res, next) => {
@@ -49,21 +46,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Rota para a página inicial
 app.get('/', (req, res) => {
   res.render('homepage', { i18n, lang: req.query.lang });
 });
 
-
-// Rota para a página inicial
-app.get('/', (req, res) => {
-  res.render('homepage');
-});
-
 // Rota para a página team.ejs
 app.get('/team', (req, res) => {
-  res.render('team');
+  res.render('team', { i18n, lang: req.query.lang });
 });
-
 
 // Iniciar o servidor
 app.listen(PORT, () => {
@@ -71,11 +62,9 @@ app.listen(PORT, () => {
 });
 
 
-
-
-
 /* ETAPAS PARA INICIAR O SERVIDOR
 1. New Terminal (Ctrl + Shift + ç)
 2. node server.js
-3. Abrir browser (Chrome, por exemplo) e escrever http://localhost:4000/
+3. npx tailwindcss -i ./public/css/main.css -o./public/css/tailwind.css --watch
+4. Abrir browser (Chrome, por exemplo) e escrever http://localhost:4000/
 */

@@ -768,11 +768,6 @@ video {
   background-color: rgba(25, 24, 24, 0.5);
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -821,11 +816,6 @@ video {
   text-align: center;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -865,19 +855,14 @@ video {
   letter-spacing: 0.05em;
 }
 
-.text-primary-light {
+.text-red-600 {
   --tw-text-opacity: 1;
-  color: rgb(0 195 233 / var(--tw-text-opacity));
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
@@ -948,35 +933,29 @@ body {
 
 /* principal */
 
+/* footer */
+
+.text-footer {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #A7A7A7;
+}
+
+.bg-grey-footer {
+  background: #222222;
+}
+
+.footer-sgv {
+  color: #A7A7A7;
+}
+
+.footer-sgv:hover {
+  transition-duration: 300ms;
+  color: #D3D3D3;
+}
+
+/* footer */
+
 /* navbar */
-
-nav ul {
-  display: flex;
-  height: 100%;
-  gap: 20px;
-  justify-content: space-evenly;
-  align-items: center;
-  list-style: none;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-  text-decoration: none;
-  color: #ccc;
-}
-
-nav .fab {
-  font-size: 1.4rem;
-}
-
-nav .icons {
-  margin-right: 50px;
-}
 
 /* navbar */
 
@@ -1030,63 +1009,6 @@ nav .icons {
   100% {
     transform: translateX(calc(-25vw * 19));
   }
-}
-
-/* footer */
-
-.text-footer {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #A7A7A7;
-}
-
-.bg-grey-footer {
-  background: #222222;
-}
-
-.footer-sgv {
-  color: #A7A7A7;
-}
-
-.footer-sgv:hover {
-  transition-duration: 300ms;
-  color: #D3D3D3;
-}
-
-/* footer */
-
-.landing {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-pic {
-  width: 300px;
-  height: auto;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: flow 2s ease-in-out infinite alternate;
-}
-
-.about-me {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  width: 50%;
-  padding: 30px;
-}
-
-.icons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  font-size: 40px;
-}
-
-.fab:hover {
-  cursor: pointer;
-  transform: scale(1.07);
 }
 
 .skills-section {
@@ -1158,28 +1080,6 @@ nav .icons {
 
 .skill-card:nth-child(3) {
   animation-delay: calc(var(--scroll) * -16s);
-}
-
-.project-section {
-  min-height: 100vh;
-  max-height: -moz-max-content;
-  max-height: max-content;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 110px;
-}
-
-.project-card {
-  color: var(--primary-color);
-  padding: 20px;
-  width: 500px;
-  height: 500px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background: var(--secondary-color);
-  cursor: pointer;
-  transition: 500ms ease-in-out;
 }
 
 @keyframes fadein {
@@ -1349,60 +1249,9 @@ nav .icons {
   }
 }
 
-/* styles.css */
-
-/* Estilos para o switcher de idiomas */
-
-.language-switcher {
-  position: relative;
-}
-
-.dropbtn {
-  display: block;
-  color: #333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #333;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.language-switcher:hover .dropdown-content {
-  display: block;
-}
-
-.hover\:text-primary-light:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 195 233 / var(--tw-text-opacity));
-}
-
 .hover\:text-red-600:hover {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-.hover\:text-red-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-0:hover {
