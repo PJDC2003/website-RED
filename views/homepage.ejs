@@ -2,41 +2,24 @@
 
 <body> 
     <%- include('./navbar') %>
-    
 
-
-
-    <div class="skills-section" id="skills">
-      <div class="skill-card">
-        <h2>FrontEnd</h2>
-        <img style="margin-top: 50px" src="splash.png" alt="" />
-        <ul>
-          <li>Languages: HTML, CSS, JavaScript, TypeScript</li>
-          <li>Frameworks/Libraries: Angular, React, Bootstrap, Material UI</li>
-          <li>Tools/Functionalities: JWT, Axios, React Query</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h2>BackEnd</h2>
-        <img style="height: 300px" class="rotate" src="wheel.png" alt="" />
-        <ul style="z-index: 1; transform: translateY(-50px)">
-          <li>Language: C#</li>
-          <li>Framework: .NET Core</li>
-          <li>Database: SQL (Entity Framework)</li>
-          <li>API: CRUD Operations, Queries, Validations</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h2>Tools</h2>
-        <img style="margin-top: 50px" src="tool.png" alt="" />
-        <ul>
-          <li>VS Code</li>
-          <li>PostMan</li>
-          <li>GitHub</li>
-          <li>Jira</li>
-        </ul>
+    <div class="container mx-auto mt-20 py-20 px-20">
+      <div class="flex justify-between space-x-10">
+        <a href="#" class="bg-white rounded-lg shadow-md flex flex-col items-center box hover:bg-gray-200 transition">
+          <img src="/img/EuRoc 2022/FotoEquipa_2.jpg" alt="Imagem 1" class="max-w-full mb-4 rounded-t-lg">
+          <p class="text-gray-600 font-bold text-center mb-4 mr-4 ml-4">Conhece todos os membros da nossa equipa</p>
+        </a>
+        <a href="#" class="bg-white rounded-lg shadow-md flex flex-col items-center box hover:bg-gray-200 transition">
+          <img src="/img/EuRoc 2022/FotoEquipa_2.jpg" alt="Imagem 2" class="max-w-full mb-4 rounded-t-lg">
+          <p class="text-center mb-4">Texto da Caixa 2</p>
+        </a>
+        <a href="#" class="bg-white rounded-lg shadow-md flex flex-col items-center box hover:bg-gray-200 transition">
+          <img src="/img/EuRoc 2022/FotoEquipa_2.jpg" alt="Imagem 3" class="max-w-full mb-4 rounded-t-lg">
+          <p class="text-center mb-4">Texto da Caixa 3</p>
+        </a>
       </div>
     </div>
 
     <%- include('./footer') %>
 </body>
+
