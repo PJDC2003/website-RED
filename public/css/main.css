@@ -3,13 +3,16 @@
 @import 'tailwindcss/utilities';
 
 /* principal */
+a {
+  text-decoration: none !important;
+} 
+
 html {
   scroll-behavior:smooth;
 }
 
 body {
   margin: 0;
-  background: #000000;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #d8e2dc;
@@ -52,7 +55,7 @@ body {
 
 
 
-/* navbar */
+/* navbar
 .reveal_navbar{
   transition: 200ms;
   background-color: #0D0C0C;
@@ -86,4 +89,4 @@ body {
 .reveal_navbar.down_0{
   background-color: #0D0C0C;
 }
-/* navbar */
+navbar */
