@@ -13,9 +13,9 @@
             </a>
         </div>
         
-        <!-- MENU (tela menor ou média) -->
+        <!-- MENU COM BOTÃO (tela menor ou média) -->
         <div class="static z-50 ml-auto sm:mr-2 mr-0 h-15">
-            <button type="button" class="flex text-center items-center h-15 pr-5 pl-2 tracking-wide text-white border-white uppercase lg:hidden toggle-nav">
+            <button type="button" class="flex text-center items-center mr-3 mt-2.5 h-10 pr-3 pl-2 tracking-wide text-whitev border rounded-md uppercase lg:hidden toggle-nav">
                 <i class="ml-1 fa fa-bars text-xl"></i>
             </button>
         </div>
@@ -23,26 +23,26 @@
         <!-- DADOS PARA O MENU/BARRA -->
         <div class="absolute top-14 left-0 w-full pt-0 font-bold tracking-wider text-center uppercase transition-all duration-300 shadow-lg -mt-14 h-15 lg:transition-none lg:w-auto lg:top-0 lg:flex lg:text-left lg:shadow-none lg:opacity-100 lg:relative lg:mt-auto lg:pt-0 xl:border-t-0 reveal_navbar backdrop-blur-2xl lg:backdrop-blur-none">
             <div class="h-15 border-b border-white mx-3 sm:ml-0 sm:mr-0 lg:hidden"></div>
-            <a href="/" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('HOME') %></a>
-            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MEMBROS') %></a>
-            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('EQUIPAS') %></a>
-            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MISSÕES') %></a>
-            <a href="#" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('PATROCÍNIOS') %></a>
-            <a href="#contactos" class="text-sm w-full flex flex-rows items-center lg:truncate pl-6 lg:px-4 h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('CONTACTOS') %></a>
+            <a href="/" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('HOME') %></a>
+            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MEMBROS') %></a>
+            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('EQUIPAS') %></a>
+            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MISSÕES') %></a>
+            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('PATROCÍNIOS') %></a>
+            <a href="#contactos" class="flex ml-4 lg:ml-0 text-right text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('CONTACTOS') %></a>
             
             <!-- COMUNICAÇÃO -->
-            <div class="flex flex-cols justify-between items-center ml-4 lg:ml-0">
-                <!-- SEPARADOR -->
-                <div class="w-0 h-10 lg:hidden border-grey-500 mx-0 lg:mx-2"></div>
-                <!-- SEPARADOR -->
-                <div class="w-0 h-10 border border-grey-500 ml-2 mr-0"></div>
+            <div class="flex flex-cols items-center ml-1 lg:ml-0">
+                <!-- SEPARADOR VERSÃO PC-->
+                <div class="lg:w-0 lg:h-10 lg:border lg:border-grey-500 lg:ml-2 lg:mr-0"></div>
+
                 <!-- LINGUAGEM -->
-                <div class="static z-50 flex items-center ml-0">
+                <div class="static z-50 flex-col items-center ml-0">
+
                     <% if (lang === 'en') { %>
                         <a href="?lang=pt" class="flex flex-row items-center">
                             <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto text-red-600"> PT </div>
                             <img src="/img/logos/idioma/PT_red.png" class="w-8"></img>
-                            <div class="relative flex flex-row hover:opacity-0 duration-300 items-center -ml-20 w-28">
+                            <div class="relative flex flex-col hover:opacity-0 duration-300 items-center -ml-20 w-28">
                                 <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto"> PT </div>
                                 <img src="/img/logos/idioma/PT_white.png" class="w-8"></img> 
                             </div>
