@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.ejs", "./public/js/**/*.js"],
-  theme: {
+    plugins: [
+        require('flowbite/plugin')
+    ],
+    content: ["./views/**/*.ejs", "./public/js/**/*.js", "./node_modules/flowbite/**/*.js"],
+    theme: {
       container: {
           center: true,
           padding: {
@@ -15,16 +18,7 @@ module.exports = {
       },
       extend: {
           colors: {
-              'nav-color': 'rgba(25, 24, 24, 0.5)',  
-              'primary-light': '#00c3e9',
-              'primary-dark': '#016aaf',
-              'secondary': '#1a1f65',
-              'bluetext': '#072f60',
-              'main':'#0A9DC9',
-              'premium':'#14AA25',
-              'gold':'#D4AF37',
-              'silver':'#808080',
-              'invited':'#EB8060',
+              'nav-color': 'rgba(25, 24, 24, 1)',  
           },
           transitionDuration: {
               '0':'0ms',
@@ -68,7 +62,6 @@ module.exports = {
              },
 
           scale: {
-
               '102':'1.02',
           },
 
@@ -82,6 +75,6 @@ module.exports = {
              '3rem':'3rem',
             },
       },
-  },
-  variants: {}
+    },
+    variants: {}
 }

@@ -1,65 +1,76 @@
-<nav class="top-0 left-0 z-50 w-screen fixed flex justify-between bg-nav-color h-15 items-center mt-0 text-xs">
 
-    <div class="relative flex px-3 h-15 w-full justify-between items-center reveal_navbar">
+<nav class="bg-nav-color fixed w-full z-20 top-0 left-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
         <!-- AEROTEC + RED -->
-        <div class="static z-50 flex items-center mx-6 h-8 my-2">
+        <div class="flex items-center">
             <a target="_blank" href="https://aerotec.pt" class="drop-shadow-xl">
-                <img src="/img/logos/institucional/AEROTEC_short.png" alt="AeroTéc" class="pr-0.5 md:pr-0 max-h-10 clicable" />
+                <img src="/img/logos/institucional/AEROTEC_short.png" alt="AeroTéc" class="pr-0.5 lg:pr-0 max-h-10 clicable" />
             </a>
             <div class="w-0 h-11 border mx-3"></div>
-            <a href="" class="drop-shadow-xl">
-                <img src="/img/Logos/RED/RED_semibranco.png" alt="RED" class="pl-0.5 md:pl-0 max-h-11 clicable" />
+            <a href="/" class="drop-shadow-xl">
+                <img src="/img/Logos/RED/RED_semibranco.png" alt="RED" class="pl-0.5 lg:pl-0 max-h-11 clicable" />
             </a>
         </div>
-        
-        <!-- MENU COM BOTÃO (tela menor ou média) -->
-        <div class="static z-50 ml-auto sm:mr-2 mr-0 h-15">
-            <button type="button" class="flex text-center items-center mr-3 mt-2.5 h-10 pr-3 pl-2 tracking-wide text-whitev border rounded-md uppercase lg:hidden toggle-nav">
-                <i class="ml-1 fa fa-bars text-xl"></i>
+
+        <div class="flex lg:order-2">
+            
+            <!-- LINGUAGEM -->
+            <div class="flex text-center items-center font-bold lg:mr-0">
+                <% if (lang === 'en') { %>
+                    <a href="?lang=pt" class="flex items-center">
+                        <div class="text-sm h-full pr-0 w-12 py-auto text-red-600"> PT </div>
+                        <img src="/img/logos/idioma/PT_red.png" class="w-8"></img>
+                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-20 w-28">
+                            <div class="text-sm h-full pr-0 w-12 py-auto"> PT </div>
+                            <img src="/img/logos/idioma/PT_white.png" class="w-8"></img> 
+                        </div>
+                    </a>
+
+                <% } else { %>
+                    <a href="?lang=en" class="flex items-center">
+                        <div class="text-sm h-full pr-0 w-12 py-auto text-red-600"> EN </div>
+                        <img src="/img/Logos/idioma/UK_red.png" class="w-8"></img>
+                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-20 w-28"> 
+                            <div class="text-sm h-full pr-0 w-12 py-auto "> EN </div>
+                            <img src="/img/Logos/idioma/UK_white.png" class="w-8"></img> 
+                        </div>
+                    </a>
+                <% } %>
+            </div>
+
+            <!-- BOTÃO MOBILE -->
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
             </button>
         </div>
 
-        <!-- DADOS PARA O MENU/BARRA -->
-        <div class="absolute top-14 left-0 w-full pt-0 font-bold tracking-wider text-center uppercase transition-all duration-300 shadow-lg -mt-14 h-15 lg:transition-none lg:w-auto lg:top-0 lg:flex lg:text-left lg:shadow-none lg:opacity-100 lg:relative lg:mt-auto lg:pt-0 xl:border-t-0 reveal_navbar backdrop-blur-2xl lg:backdrop-blur-none">
-            <div class="h-15 border-b border-white mx-3 sm:ml-0 sm:mr-0 lg:hidden"></div>
-            <a href="/" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('HOME') %></a>
-            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MEMBROS') %></a>
-            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('EQUIPAS') %></a>
-            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('MISSÕES') %></a>
-            <a href="#" class="flex ml-4 lg:ml-0 text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('PATROCÍNIOS') %></a>
-            <a href="#contactos" class="flex ml-4 lg:ml-0 text-right text-sm w-full flex-rows items-center lg:truncate lg:px-4 h-10 lg:h-15 lg:w-auto lg:flex lg:py-0 transition-colors duration-300 hover:text-red-600"><%= __('CONTACTOS') %></a>
-            
-            <!-- COMUNICAÇÃO -->
-            <div class="flex flex-cols items-center ml-1 lg:ml-0">
-                <!-- SEPARADOR VERSÃO PC-->
-                <div class="lg:w-0 lg:h-10 lg:border lg:border-grey-500 lg:ml-2 lg:mr-0"></div>
-
-                <!-- LINGUAGEM -->
-                <div class="static z-50 flex-col items-center ml-0">
-
-                    <% if (lang === 'en') { %>
-                        <a href="?lang=pt" class="flex flex-row items-center">
-                            <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto text-red-600"> PT </div>
-                            <img src="/img/logos/idioma/PT_red.png" class="w-8"></img>
-                            <div class="relative flex flex-col hover:opacity-0 duration-300 items-center -ml-20 w-28">
-                                <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto"> PT </div>
-                                <img src="/img/logos/idioma/PT_white.png" class="w-8"></img> 
-                            </div>
-                        </a>
-                    <% } else { %>
-                        <a href="?lang=en" class="flex flex-row items-center">
-                            <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto text-red-600"> EN </div>
-                            <img src="/img/Logos/idioma/UK_red.png" class="w-8"></img>
-                            <div class="relative flex flex-row hover:opacity-0 duration-300 items-center -ml-20 w-28"> 
-                                <div class="text-sm h-full lg:px-4 pr-0 w-12 py-auto "> EN </div>
-                                <img src="/img/Logos/idioma/UK_white.png" class="w-8 my-2"></img> 
-                            </div>
-                        </a>
-                    <% } %>
-                </div>
-            </div>
-        </div> 
+        <!-- SEPARADORES -->
+        <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 lg:p-0 mt-4 text-base font-bold border border-gray-100 rounded-lg bg-nav-color lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-nav-color">
+                <li>
+                    <a href="/" class="block py-2 pl-3 pr-4 transition-colors text-white bg-red-600 rounded lg:bg-transparent lg:text-red-600 duration-300 lg:p-0" aria-current="page"><%= __('HOME') %></a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('MEMBROS') %></a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('EQUIPAS') %></a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('MISSÕES') %></a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('PATROCÍNIOS') %></a>
+                </li>
+                <li>
+                    <a href="#contactos" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('CONTACTOS') %><a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-</nav>
+  </nav>
+  
