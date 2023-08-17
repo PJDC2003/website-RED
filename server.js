@@ -51,9 +51,9 @@ app.get('/', (req, res) => {
   res.render('homepage', { i18n, lang: req.query.lang });
 });
 
-// Rota para a página team.ejs
-app.get('/team', (req, res) => {
-  res.render('team', { i18n, lang: req.query.lang });
+// Rota para a página membros.ejs
+app.get('/membros', (req, res) => {
+  res.render('membros', { i18n, lang: req.query.lang });
 });
 
 // Iniciar o servidor

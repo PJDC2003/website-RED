@@ -1,9 +1,8 @@
-
 <nav class="bg-nav-color fixed w-full z-20 top-0 left-0">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
         <!-- AEROTEC + RED -->
-        <div class="flex items-center">
+        <div class="flex items-center w-3/5 md:w-3/4 lg:w-auto">
             <a target="_blank" href="https://aerotec.pt" class="drop-shadow-xl">
                 <img src="/img/logos/institucional/AEROTEC_short.png" alt="AeroTéc" class="pr-0.5 lg:pr-0 max-h-10 clicable" />
             </a>
@@ -13,26 +12,24 @@
             </a>
         </div>
 
-        <div class="flex items-center lg:order-2">
+        <div class="flex items-center lg:order-2 w-2/5 md:w-1/4 lg:w-auto lg:px-0">
             
             <!-- LINGUAGEM -->
             <div class="flex text-center items-center font-bold lg:mr-0">
                 <% if (lang === 'en') { %>
                     <a href="?lang=pt" class="flex items-center">
-                        <div class="text-sm h-full pr-0 w-12 py-auto text-red-600"> PT </div>
+                        <div class="text-sm h-full pr-0 w-12 py-auto hover:text-red-600 duration-300"> PT </div>
                         <img src="/img/logos/idioma/PT_red.png" class="w-8"></img>
-                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-20 w-28">
-                            <div class="text-sm h-full pr-0 w-12 py-auto"> PT </div>
+                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-8 w-20">
                             <img src="/img/logos/idioma/PT_white.png" class="w-8"></img> 
                         </div>
                     </a>
 
                 <% } else { %>
                     <a href="?lang=en" class="flex items-center">
-                        <div class="text-sm h-full pr-0 w-12 py-auto text-red-600"> EN </div>
+                        <div class="text-sm h-full pr-0 w-12 py-auto hover:text-red-600 duration-300"> EN </div>
                         <img src="/img/Logos/idioma/UK_red.png" class="w-8"></img>
-                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-20 w-28"> 
-                            <div class="text-sm h-full pr-0 w-12 py-auto "> EN </div>
+                        <div class="relative flex hover:opacity-0 duration-300 items-center -ml-8 w-20"> 
                             <img src="/img/Logos/idioma/UK_white.png" class="w-8"></img> 
                         </div>
                     </a>
@@ -40,7 +37,7 @@
             </div>
 
             <!-- BOTÃO MOBILE -->
-            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
+            <button data-collapse-toggle="navbar-sticky" type="button" id="mobile-menu-toggle" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -50,27 +47,68 @@
 
         <!-- SEPARADORES -->
         <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 lg:p-0 mt-4 text-base font-bold border border-gray-100 rounded-lg bg-nav-color lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-nav-color">
+            <ul class="flex flex-col p-2 lg:p-0 mt-3 text-xs md:text-sm font-bold border-t border-gray-100 bg-nav-color lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-nav-color"> 
+                <!-- border border-gray-100 rounded-lg se for para rodear tudo -->
                 <li>
-                    <a href="/" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0" aria-current="page"><%= __('HOME') %></a>
+                    <a href="/" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0" aria-current="page"><%= __('HOME') %></a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('MEMBROS') %></a>
+                    <a href="membros.ejs" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('MEMBROS') %></a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('EQUIPAS') %></a>
+                    <a href="#" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('EQUIPAS') %></a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('MISSÕES') %></a>
+                    <a href="#" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('MISSÕES') %></a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('PATROCÍNIOS') %></a>
+                    <a href="#" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('PATROCÍNIOS') %></a>
                 </li>
                 <li>
-                    <a href="#contactos" class="block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('CONTACTOS') %><a>
+                    <a href="#contactos" class="block py-2 pb-0 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('CONTACTOS') %><a>
                 </li>
             </ul>
         </div>
     </div>
-  </nav>
-  
+</nav>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('navbar-sticky');
+        const mobileMenuItems = mobileMenu.querySelectorAll('a.navbar-link'); // Use a classe "navbar-link"
+
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('block');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        mobileMenuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('block');
+            } else {
+                mobileMenu.classList.remove('block');
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        const currentPath = window.location.pathname;
+        mobileMenuItems.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (currentPath === linkPath) {
+                link.classList.add('text-red-600'); // Adicionar a classe para realçar a opção
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
