@@ -23,6 +23,22 @@ body {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out;
 }
+
+.fontes {
+  font-size: 1rem !important; /* Tamanho de fonte padrão */
+}
+
+@media (min-width: 640px) {
+  .fontes {
+      font-size: 1.125rem !important; /* Tamanho de fonte para dispositivos de tamanho médio */
+  }
+}
+
+@media (min-width: 768px) {
+  .fontes {
+      font-size: 1.25rem !important; /* Tamanho de fonte para dispositivos de tamanho grande */
+  }
+}
 /* principal */
 
 
