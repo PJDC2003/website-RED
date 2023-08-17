@@ -50,10 +50,10 @@
             <ul class="flex flex-col p-2 lg:p-0 mt-3 text-xs md:text-sm font-bold border-t border-gray-100 bg-nav-color lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-nav-color"> 
                 <!-- border border-gray-100 rounded-lg se for para rodear tudo -->
                 <li>
-                    <a href="/" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0" aria-current="page"><%= __('HOME') %></a>
+                    <a href="/" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('HOME') %></a>
                 </li>
                 <li>
-                    <a href="membros.ejs" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('MEMBROS') %></a>
+                    <a href="/membros" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 duration-300 lg:p-0"><%= __('MEMBROS') %></a>
                 </li>
                 <li>
                     <a href="#" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('EQUIPAS') %></a>
@@ -65,25 +65,29 @@
                     <a href="#" class="navbar-link block py-2 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('PATROCÍNIOS') %></a>
                 </li>
                 <li>
-                    <a href="#contactos" class="block py-2 pb-0 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('CONTACTOS') %><a>
+                    <a href="#contactos" class="navbar-link block py-2 pb-0 pl-3 pr-4 transition-colors text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0"><%= __('CONTACTOS') %><a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('navbar-sticky');
-        const mobileMenuItems = mobileMenu.querySelectorAll('a.navbar-link'); // Use a classe "navbar-link"
+        const mobileMenuItems = mobileMenu.querySelectorAll('a.navbar-link');
 
         mobileMenuItems.forEach(item => {
             item.addEventListener('click', () => {
                 mobileMenu.classList.remove('block');
                 mobileMenu.classList.add('hidden');
             });
+
+            // Verificar e adicionar classe de destaque à opção selecionada
+            if (window.location.pathname === item.getAttribute('href')) {
+                item.classList.add('text-red-600');
+            }
         });
 
         mobileMenuToggle.addEventListener('click', () => {
@@ -95,16 +99,9 @@
                 mobileMenu.classList.add('hidden');
             }
         });
-
-        const currentPath = window.location.pathname;
-        mobileMenuItems.forEach(link => {
-            const linkPath = link.getAttribute('href');
-            if (currentPath === linkPath) {
-                link.classList.add('text-red-600'); // Adicionar a classe para realçar a opção
-            }
-        });
     });
 </script>
+
 
 
 
